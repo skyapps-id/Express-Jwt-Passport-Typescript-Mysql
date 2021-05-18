@@ -1,4 +1,4 @@
-# REST API Express Typescript & Mysql
+# REST API Express Jwt Passport Typescript & Mysql
 
 🚢[Docker Image](https://hub.docker.com/repository/docker/rootduck/express-api)
 
