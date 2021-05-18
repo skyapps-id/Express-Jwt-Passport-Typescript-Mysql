@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  db:
+    image: mysql:5.6
+    environment:
+      - MYSQL_DATABASE='express-typescript'
+      - MYSQL_USER='user'
+      - MYSQL_PASSWORD='password'
+      - MYSQL_ROOT_PASSWORD='password'
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - PORT=8000
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_USER=user
+      - DB_PASSWORD=password
+      - DB_NAME=express-typescript
